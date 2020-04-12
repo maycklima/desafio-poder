@@ -12,6 +12,6 @@ export class PokerService {
   constructor( private http: HttpClient) {   }
 
   mostrar(){
-    return this.http.get<any[]>(`${this.playersUrl}`);
+    return this.http.get<any>(`${this.playersUrl}`);
   }
 }

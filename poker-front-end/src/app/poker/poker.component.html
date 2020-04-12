@@ -1,7 +1,46 @@
-<h1>Jogada</h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </div>
+</div>
+  </nav>
+<div></div>
 
-<ul>
-    <li *ngFor="let p of players" >
-        {{p.resultado}}
-    </li>
-</ul>
+<div class="container" *ngFor="let p of players" >
+    <div>Nome do jogador: {{p.player1.nome}}</div>
+    <div>Mão do Jogador 1: {{p.hand1}}</div>
+    <div>Carta 1: {{display(p.hand1[0],p.hand1[1])}}</div>
+    <div>Carta 2: {{display(p.hand1[2],p.hand1[3])}}</div>
+    <div>Carta 3: {{display(p.hand1[4],p.hand1[5])}}</div>
+    <div>Carta 4: {{display(p.hand1[6],p.hand1[7])}}</div>
+    <div>Carta 5: {{display(p.hand1[8],p.hand1[9])}}</div>
+    <div>Situação do Jogardor 1: {{getJogada(p.hand1[5])}}</div><br>
+
+    <div>Nome do jogador 2: {{p.player2.nome}}</div>    
+    <div>Mão do Jogador 2: {{p.hand2}}</div> 
+    <div>Carta 1: {{display(p.hand2[0],p.hand2[1])}}</div>
+    <div>Carta 2: {{display(p.hand2[2],p.hand2[3])}}</div>
+    <div>Carta 3: {{display(p.hand2[4],p.hand2[5])}}</div>
+    <div>Carta 4: {{display(p.hand2[6],p.hand2[7])}}</div>
+    <div>Carta 5: {{display(p.hand2[8],p.hand2[9])}}</div>   
+    <div>Situação do Jogardor 2: {{getJogada(p.hand2[5])}}</div><br>
+    <div>Resultado: {{p.resultado}}</div>
+</div>
