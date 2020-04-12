@@ -15,33 +15,10 @@ import com.musicplayce.desafiopoker.model.Produto;
 public class gameController {
 	
 	
-	@RequestMapping("/produto")
-	public List<Produto> produto() {
-		
-		Produto produto1 = new Produto();
-		Produto produto2 = new Produto();
-		List<Produto> listaProduto = new ArrayList<Produto>();
-		produto1.setNome("Refrigerante");
-		produto1.setValor("10 Reais");
-		produto1.setQnt("2");
-		
-		produto1.setNome("Salgadinho");
-		produto1.setValor("5 Reais");
-		produto1.setQnt("9");
-		
-		listaProduto.add(produto1);
-		listaProduto.add(produto2);
-		
-		
-		return listaProduto;
-	} 
-	
-	
 	@RequestMapping("/ola")
 	public String retornarOla() {
 		return "Hello World!";
-	}
-	
+	}	
 	
 	
 	@RequestMapping("/game")
