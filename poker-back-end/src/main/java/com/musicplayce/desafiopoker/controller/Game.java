@@ -38,44 +38,44 @@ public class Game {
         // evaluate the hand
         if (this.royalFlush() == 1) {
             System.out.println("You have a royal flush!");
-            int[] handaux = {hand[0].rank, hand[1].rank, hand[2].rank, hand[3].rank, hand[4].rank, 22};
+            int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 22};
             return handaux;
         } else if (this.straightFlush() == 1) {
             System.out.println("You have a straight flush!");
-            int[] handaux = {hand[0].rank, hand[1].rank, hand[2].rank, hand[3].rank, hand[4].rank, 21};
+            int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 21};
             return handaux;
         } else if (this.fourOfaKind() == 1) {
             System.out.println("You have four of a kind!");
-            int[] handaux = {hand[0].rank, hand[1].rank, hand[2].rank, hand[3].rank, hand[4].rank, 20};
+            int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 20};
             return handaux;
         } else if (this.fullHouse() == 1) {
             System.out.println("You have a full house!");
-            int[] handaux = {hand[0].rank, hand[1].rank, hand[2].rank, hand[3].rank, hand[4].rank, 19};
+            int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 19};
             return handaux;
         } else if (this.flush() == 1) {
             System.out.println("You have a flush!");
-            int[] handaux = {hand[0].rank, hand[1].rank, hand[2].rank, hand[3].rank, hand[4].rank, 18};
+            int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 18};
             return handaux;
         } else if (this.straight() == 1) {
             System.out.println("You have a straight!");
-            int[] handaux = {hand[0].rank, hand[1].rank, hand[2].rank, hand[3].rank, hand[4].rank, 17};
+            int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 17};
             return handaux;
         } else if (this.triple() == 1) {
             System.out.println("You have a triple!");
-            int[] handaux = {hand[0].rank, hand[1].rank, hand[2].rank, hand[3].rank, hand[4].rank, 16};
+            int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 16};
             return handaux;
         } else if (this.twoPairs() == 1) {
             System.out.println("You have two pairs!");
-            int[] handaux = {hand[0].rank, hand[1].rank, hand[2].rank, hand[3].rank, hand[4].rank, 15};
+            int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 15};
             return handaux;
         } else if (this.pair() == 1) {
             System.out.println("You have a pair!");
-            int[] handaux = {hand[0].rank, hand[1].rank, hand[2].rank, hand[3].rank, hand[4].rank, 14};
+            int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 14};
             return handaux;
         } else {
             int highCard = this.highCard();
             System.out.println("Your highest card is " + highCard);
-            int[] handaux = {hand[0].rank, hand[1].rank, hand[2].rank, hand[3].rank, hand[4].rank, highCard};
+            int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, highCard};
             return handaux;
         }
     }

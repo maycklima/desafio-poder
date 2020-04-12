@@ -5,7 +5,9 @@ import lombok.Data;
 @Data
 public class Mesa 
 {
-	private Player player;
-	private int[]  hand;	
+	private Player player1;
+	private Player player2;
+	private int[]  hand1;
+	private int[]  hand2;
 	private String resultado;
 }
