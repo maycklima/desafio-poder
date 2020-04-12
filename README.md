@@ -7,6 +7,7 @@
 - Bootstrap 4
 - IDE: Visual Studio Code
 
-*Front-end
+*Back-end
 - Java
 - Spring
+- IDE: Eclipse - Spring Toos Suite 4
