@@ -1,2 +1,15 @@
-# desafio-poker
-Desafio Poker - Music Playce
+# Desafio Poker - Music Playce
+
+*Front-end
+- Angular
+- HTML5
+- CSS3
+- JavaScript
+- TypeScript
+- Bootstrap 4
+- IDE: Visual Studio Code
+
+*Back-end
+- Java
+- Spring
+- IDE: Eclipse - Spring Toos Suite 4
