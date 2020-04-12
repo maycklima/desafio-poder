@@ -1,2 +1,1 @@
-# desafio-poker
-Desafio Poker - Music Playce
+# Desafio Poker - Music Playce
