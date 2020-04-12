@@ -4,6 +4,8 @@
 - Angular
 - HTML5
 - CSS3
+- JavaScript
+- TypeScript
 - Bootstrap 4
 - IDE: Visual Studio Code
 
