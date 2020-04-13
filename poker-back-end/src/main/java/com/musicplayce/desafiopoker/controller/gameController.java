@@ -39,13 +39,7 @@ public class gameController {
         mesa.setPlayer2(player2);
         
         int[] playerGame = game.play(player);
-        System.out.println("____________________________________");
-        System.out.println("Player 1 " + player.getNome() + " result: " + playerGame[5]);
-        System.out.println("____________________________________");
         int[] playerGame2 = game.play(player2);
-        System.out.println("____________________________________");
-        System.out.println("Player 2 " + player2.getNome() + " result: " + playerGame2[5]);
-        System.out.println("____________________________________");
         
         mesa.setHand1(playerGame);
         mesa.setHand2(playerGame2);
@@ -65,12 +59,8 @@ public class gameController {
             }
         } else {
             if (playerGame[10] > playerGame2[10]) {
-            	//return  "Player 1 - " + player.getNome() + " Win";
-            	//mesa1.setResultado("Player 1 - " + player.getNome() + " Win");
             	mesa.setResultado(player.getNome() + " venceu!");
             } else {
-            	//return "Player 2 - " + player2.getNome() + " Win";
-            	//mesa1.setResultado("Player 2 - " + player2.getNome() + " Win");
             	mesa.setResultado(player2.getNome() + " venceu!");
             }
         }
@@ -111,6 +101,6 @@ public class gameController {
             }
         } else {
             return 2;
-        }
+        } 
     }
 }

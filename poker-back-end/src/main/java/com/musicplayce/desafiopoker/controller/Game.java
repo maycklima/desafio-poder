@@ -33,48 +33,36 @@ public class Game {
         // sort hand
         Arrays.sort(hand);
 
-        this.checkHand();
-
         // evaluate the hand
         if (this.royalFlush() == 1) {
-            System.out.println("You have a royal flush!");
             int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 22};
             return handaux;
         } else if (this.straightFlush() == 1) {
-            System.out.println("You have a straight flush!");
             int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 21};
             return handaux;
         } else if (this.fourOfaKind() == 1) {
-            System.out.println("You have four of a kind!");
             int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 20};
             return handaux;
         } else if (this.fullHouse() == 1) {
-            System.out.println("You have a full house!");
             int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 19};
             return handaux;
         } else if (this.flush() == 1) {
-            System.out.println("You have a flush!");
             int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 18};
             return handaux;
         } else if (this.straight() == 1) {
-            System.out.println("You have a straight!");
             int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 17};
             return handaux;
         } else if (this.triple() == 1) {
-            System.out.println("You have a triple!");
             int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 16};
             return handaux;
         } else if (this.twoPairs() == 1) {
-            System.out.println("You have two pairs!");
             int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 15};
             return handaux;
         } else if (this.pair() == 1) {
-            System.out.println("You have a pair!");
             int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, 14};
             return handaux;
         } else {
             int highCard = this.highCard();
-            System.out.println("Your highest card is " + highCard);
             int[] handaux = {hand[0].rank,hand[0].suit, hand[1].rank,hand[1].suit, hand[2].rank,hand[2].suit, hand[3].rank,hand[3].suit, hand[4].rank,hand[4].suit, highCard};
             return handaux;
         }
@@ -93,39 +81,6 @@ public class Game {
         hand[2].suit = 1;
         hand[3].suit = 1;
         hand[4].suit = 1;
-    }
-
-    // tells player cards in hand
-    public void checkHand() {
-        for (int handCounter = 0; handCounter < HAND_SIZE; handCounter++) {
-            this.display(hand[handCounter]);
-        }
-    }
-
-    // evaluates the hand
-    public void evaluate() {
-        if (this.royalFlush() == 1) {
-            System.out.println("You have a royal flush!");
-        } else if (this.straightFlush() == 1) {
-            System.out.println("You have a straight flush!");
-        } else if (this.fourOfaKind() == 1) {
-            System.out.println("You have four of a kind!");
-        } else if (this.fullHouse() == 1) {
-            System.out.println("You have a full house!");
-        } else if (this.flush() == 1) {
-            System.out.println("You have a flush!");
-        } else if (this.straight() == 1) {
-            System.out.println("You have a straight!");
-        } else if (this.triple() == 1) {
-            System.out.println("You have a triple!");
-        } else if (this.twoPairs() == 1) {
-            System.out.println("You have two pairs!");
-        } else if (this.pair() == 1) {
-            System.out.println("You have a pair!");
-        } else {
-            int highCard = this.highCard();
-            System.out.println("Your highest card is " + highCard);
-        }
     }
 
     // checks for a royal flush
@@ -247,65 +202,5 @@ public class Game {
             }
         }
         return highCard;
-    }
-
-    // generates string for each card in hand
-    public void display(Card card) {
-        if (card.rank == 1) {
-            System.out.print("1 - Ace of ");
-        }
-        if (card.rank == 2) {
-            System.out.print("2 - Two of ");
-        }
-        if (card.rank == 3) {
-            System.out.print("3 - Three of ");
-        }
-        if (card.rank == 4) {
-            System.out.print("4 - Four of ");
-        }
-        if (card.rank == 5) {
-            System.out.print("5 - Five of ");
-        }
-        if (card.rank == 6) {
-            System.out.print("6 - Six of ");
-        }
-        if (card.rank == 7) {
-            System.out.print("7 - Seven of ");
-        }
-        if (card.rank == 8) {
-            System.out.print("8 - Eight of ");
-        }
-        if (card.rank == 9) {
-            System.out.print("9 - Nine of ");
-        }
-        if (card.rank == 10) {
-            System.out.print("10 - Ten of ");
-        }
-        if (card.rank == 11) {
-            System.out.print("11 - Jack of ");
-        }
-        if (card.rank == 12) {
-            System.out.print("12 - Queen of ");
-        }
-        if (card.rank == 13) {
-            System.out.print("13 - King of ");
-        }
-        if (card.suit == 1) {
-            System.out.print("Spades");
-            System.out.println();
-        }
-        if (card.suit == 2) {
-            System.out.print("Hearts");
-            System.out.println();
-        }
-        if (card.suit == 3) {
-            System.out.print("Diamonds");
-            System.out.println();
-        }
-        if (card.suit == 4) {
-            System.out.print("Clubs");
-            System.out.println();
-        }
-
     }
 }
