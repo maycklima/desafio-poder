@@ -1,19 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-    <a class="navbar-brand" href="#"><img src="{{ imagePath }}" alt="" width="50" height="50"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand" href="#"><img [src]="imagePath" alt="" width="50" height="50"></a>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sobre</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Social</a>
+          <a class="nav-link" (click)="novoJogo()" href="#">Home</a>
         </li>
       </ul>
     </div>
@@ -22,50 +13,74 @@
  
   <div id="container" class="container" >
     <div id="divEsquerdo"> 
-    <div  id="divForm">
-    <div class="form-group">
+    <div  id="divForm" >
+     <div [hidden]=mostrarForm>
+       <div id=nome >JOGADORES</div><br>
+    <div class="form-group" >
       <label >Jogador 1:</label>
-      <input type="text" value="Mayck" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" #nome1Input>
+      <input type="text" placeholder="Nome" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" #nome1Input>
     </div>
     <div class="form-group">
       <label >Jogador 2:</label>
-      <input type="text" value="Cintya" class="form-control" id="exampleInputPassword1" #nome2Input>
+      <input type="text" placeholder="Nome" class="form-control" id="exampleInputPassword1" #nome2Input>
     </div>
-    <button (click)="salvarValor(nome1Input.value,nome2Input.value)" class="btn btn-primary">Dar as cartas</button> 
   </div>
-  <div id="divPlacar"></div>
+  <div id="center" >
+    <button id="button" (click)="darCartas(nome1Input.value,nome2Input.value)" class="btn btn-primary">Dar as cartas</button> 
+    <button id="button" (click)="novoJogo()" class="btn btn-primary">Reiniciar</button> 
+    </div>
+  
+  </div>
+  <div id="divPlacar" [hidden]=placar>
+    <div id=nome >PLACAR </div><br>
+    {{player1Name}}: {{player1Score}}<br>
+    {{player2Name}}: {{player2Score}}
+  </div>
 </div>
 
-    <div  id="divFormPlayer">
+    <div id="divFormPlayer" [hidden]="mostrarDivCartas">
       <div id="divGame" *ngFor="let p of players" >
+        <div  id="cartas">
         <div id="nome">{{p.player1.nome}}</div>
         <!--<div>Mão do Jogador 1: {{p.hand1}}</div>-->
-        <div id="cartas">
-        <img src="{{retornaImagem(p.hand1[0],p.hand1[1])}}" alt="" width="100" height="146">
-        <img src="{{retornaImagem(p.hand1[2],p.hand1[3])}}" alt="" width="100" height="146">
-        <img src="{{retornaImagem(p.hand1[4],p.hand1[5])}}" alt="" width="100" height="146">
-        <img src="{{retornaImagem(p.hand1[6],p.hand1[7])}}" alt="" width="100" height="146">
-        <img src="{{retornaImagem(p.hand1[8],p.hand1[9])}}" alt="" width="100r" height="146">        
-        <div [hidden]="mostrarResultado">{{getJogada(p.hand1[10])}}</div><br>
-      </div>
-    
+       
+        <img [src]="retornaImagem(p.hand1[0],p.hand1[1])" alt="" width="100" height="146">
+        <img [src]="retornaImagem(p.hand1[2],p.hand1[3])" alt="" width="100" height="146">
+        <img [src]="retornaImagem(p.hand1[4],p.hand1[5])" alt="" width="100" height="146">
+        <img [src]="retornaImagem(p.hand1[6],p.hand1[7])" alt="" width="100" height="146">
+        <img [src]="retornaImagem(p.hand1[8],p.hand1[9])" alt="" width="100r" height="146">        
+        <a id="resultadocada" [hidden]="mostrarResultado">{{getJogada(p.hand1[10])}}</a><br>
+      
+        <br>
         <div id="nome">{{p.player2.nome}}</div>    
         <!--<div>Mão do Jogador 2: {{p.hand2}}</div>-->
-        <img src="{{retornaImagem(p.hand2[0],p.hand2[1])}}" alt="" width="100" height="146">
-        <img src="{{retornaImagem(p.hand2[2],p.hand2[3])}}" alt="" width="100" height="146">
-        <img src="{{retornaImagem(p.hand2[4],p.hand2[5])}}" alt="" width="100" height="146">
-        <img src="{{retornaImagem(p.hand2[6],p.hand2[7])}}" alt="" width="100" height="146">
-        <img src="{{retornaImagem(p.hand2[8],p.hand2[9])}}" alt="" width="100" height="146">
-        <div [hidden]="mostrarResultado">{{getJogada(p.hand2[10])}}</div><br>     
-        <div id="resultado" [hidden]="mostrarResultado">{{p.resultado}}</div>             
-      </div> 
-        
-    <div id="center">
-         
-      <button [hidden]="mostrarBotaoResultado" (click)="getResultado()" class="btn btn-primary">Mostrar resultado</button></div>          
-    </div>   
+        <img [src]="retornaImagem(p.hand2[0],p.hand2[1])" alt="" width="100" height="146">
+        <img [src]="retornaImagem(p.hand2[2],p.hand2[3])" alt="" width="100" height="146">
+        <img [src]="retornaImagem(p.hand2[4],p.hand2[5])" alt="" width="100" height="146">
+        <img [src]="retornaImagem(p.hand2[6],p.hand2[7])" alt="" width="100" height="146">
+        <img [src]="retornaImagem(p.hand2[8],p.hand2[9])" alt="" width="100" height="146">
+        <a id="resultadocada" [hidden]="mostrarResultado">{{getJogada(p.hand2[10])}}</a><br> <br>   
 
-    
+        <div id="resultado" [hidden]="mostrarResultado">
+          <div class="alert alert-success" role="alert">
+            {{p.resultado}}
+            </div>
+          
+         </div>             
+      </div> 
+    </div>
+
+      <div id="center" [hidden]="mostrarBotoesResultado"> 
+
+      <div *ngIf="mostrarResultado">
+        <button [hidden]="mostrarBotaoResultado" (click)="getResultado()" class="btn btn-primary">Mostrar resultado</button>
+      </div>
+  
+      <div *ngIf="!mostrarResultado">
+        <button id="button" (click)="salvarResultado()" class="btn btn-primary">Salvar resultado</button>
+        <button id="button" (click)="limpar()" class="btn btn-primary">Descartar resultado</button>
+      </div>
+    </div>      
   </div>
 
 

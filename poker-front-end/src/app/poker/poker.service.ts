@@ -14,6 +14,6 @@ export class PokerService {
   constructor( private http: HttpClient) {   }
 
   mostrar(nome1, nome2){
-    return this.http.get<any>(`${this.playersUrl}` + "?player1nome=" + nome1 + "&player2nome= " + nome2);
+    return this.http.get<any>(`${this.playersUrl}` + "?player1nome=" + nome1 + "&player2nome=" + nome2);
   }
 }

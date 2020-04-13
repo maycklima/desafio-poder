@@ -11,9 +11,20 @@ export class PokerComponent implements OnInit {
   players: any;
   player1Name:string;
   player2Name:string;
+  
+  player1Score = 0;
+  player2Score = 0;
+  resultado;
+
   imagePath = '/assets/poker-icon.png'
   mostrarResultado = true;
-  mostrarBotaoResultado = true;
+  mostrarBotaoResultado = true;  
+  mostrarBotoesResultado = true;
+  mostrarDivCartas = true;
+  mostrarForm = false;
+  placar = true;
+
+   
 
   constructor(private pokerService: PokerService) { }
 
@@ -24,12 +35,53 @@ export class PokerComponent implements OnInit {
     this.mostrarResultado = !this.mostrarResultado;
   }
 
-  salvarValor(nomePlayer1, nomePlayer2){
-    this.player1Name = nomePlayer1;
-    this.player2Name = nomePlayer2;
-    this.mostrar();
-    this.mostrarResultado = true;    
-    this.mostrarBotaoResultado = false;
+  setResultado(resultado){
+    this.resultado = resultado;
+  }
+
+  salvarResultado(){
+    for (const p of this.players) {
+      if(p.resultado == this.player1Name +" venceu!")
+      {
+        this.player1Score++;
+      }else
+      {
+        this.player2Score++;
+      }
+    }
+    this.limpar()    
+    this.placar = false;
+  }
+
+  limpar(){
+    this.mostrarResultado = true;
+    this.mostrarBotaoResultado = true;
+  }
+
+  darCartas(nomePlayer1, nomePlayer2){
+    if(nomePlayer1 == "" || nomePlayer2 == ""){
+    alert("Digite os nomes dos jogadores")
+    }else{
+      this.player1Name = nomePlayer1;
+      this.player2Name = nomePlayer2;
+      this.mostrar();
+      this.mostrarResultado = true;    
+      this.mostrarBotaoResultado = false;
+      this.mostrarDivCartas = false;
+      this.mostrarBotoesResultado = false;
+      this.mostrarForm = true;
+    }
+  }
+  novoJogo(){
+    this.player1Name = "";
+    this.player2Name = "";
+    this.player1Score = 0;
+    this.player2Score = 0;
+    this.mostrarResultado = false;    
+    this.mostrarBotoesResultado = true;
+    this.mostrarDivCartas = true;
+    this.mostrarForm = false;
+    this.placar = true;
   }
 
   mostrar(){
@@ -63,6 +115,7 @@ export class PokerComponent implements OnInit {
 
   retornaImagem(rank,suit)
   {
-    return "/assets/baralho/"+ rank +"-"+suit+".png"
+    return "/assets/baralho/" + rank + "-" + suit + ".png"
   }
+  
 }
