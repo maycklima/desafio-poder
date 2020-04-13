@@ -21,7 +21,7 @@ public class gameController {
 	
 	
 	@RequestMapping("/game")
-	public List<Mesa> game() {		
+	public List<Mesa> game(String player1nome, String player2nome) {		
 		// make game
         Game game = new Game();
         List<Mesa> listaMesa = new ArrayList<Mesa>();
@@ -32,8 +32,8 @@ public class gameController {
         Player player = new Player();
         Player player2 = new Player();
 
-        player.setNome("Jorge Mayck");
-        player2.setNome("Raphael Policena");
+        player.setNome(player1nome);
+        player2.setNome(player2nome);
         
         mesa.setPlayer1(player);
         mesa.setPlayer2(player2);
@@ -54,24 +54,24 @@ public class gameController {
             int desempate = desempatar(playerGame, playerGame2);
             switch (desempate) {
                 case 1:
-                	mesa.setResultado("Player 1 - " + player.getNome() + " Win");
+                	mesa.setResultado(player.getNome() + " venceu!");
                 	break;
                 case 2:
-                	mesa.setResultado("Player 2 - " + player2.getNome() + " Win");
+                	mesa.setResultado(player2.getNome() + " venceu!");
                 	break;
                 case 3:
-                	mesa.setResultado("Empate");
+                	mesa.setResultado("O jogo deu empate!");
                 	break;
             }
         } else {
             if (playerGame[10] > playerGame2[10]) {
             	//return  "Player 1 - " + player.getNome() + " Win";
             	//mesa1.setResultado("Player 1 - " + player.getNome() + " Win");
-            	mesa.setResultado("Player 1 - " + player.getNome() + " Win");
+            	mesa.setResultado(player.getNome() + " venceu!");
             } else {
             	//return "Player 2 - " + player2.getNome() + " Win";
             	//mesa1.setResultado("Player 2 - " + player2.getNome() + " Win");
-            	mesa.setResultado("Player 2 - " + player2.getNome() + " Win");
+            	mesa.setResultado(player2.getNome() + " venceu!");
             }
         }
         

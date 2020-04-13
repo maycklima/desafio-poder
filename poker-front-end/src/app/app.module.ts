@@ -1,11 +1,13 @@
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokerComponent } from './poker/poker.component';
 import { PokerService } from './poker/poker.service';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { PokerService } from './poker/poker.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule    
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [PokerService],
   bootstrap: [AppComponent]

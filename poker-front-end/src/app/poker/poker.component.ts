@@ -9,98 +9,60 @@ import { Component, OnInit } from '@angular/core';
 export class PokerComponent implements OnInit {
 
   players: any;
+  player1Name:string;
+  player2Name:string;
+  imagePath = '/assets/poker-icon.png'
+  mostrarResultado = true;
+  mostrarBotaoResultado = true;
 
   constructor(private pokerService: PokerService) { }
 
   ngOnInit(): void {
+  }
 
+  getResultado(){
+    this.mostrarResultado = !this.mostrarResultado;
+  }
+
+  salvarValor(nomePlayer1, nomePlayer2){
+    this.player1Name = nomePlayer1;
+    this.player2Name = nomePlayer2;
     this.mostrar();
+    this.mostrarResultado = true;    
+    this.mostrarBotaoResultado = false;
   }
 
   mostrar(){
-    this.pokerService.mostrar().subscribe(dados => this.players = dados)
+    this.pokerService.mostrar( this.player1Name,  this.player2Name).subscribe(dados => this.players = dados)
   }
 
   getJogada(valor)
   {
     if (valor == 22) {
-      return "You have a royal flush!";
+      return "Você tem um royal flush!";
   } else if (valor == 21) {
-      return "You have a straight flush!";
+      return "Você tem um straight flush!";
   } else if (valor == 20) {
-      return "You have four of a kind!";
+      return "Você tem um four of a kind!";
   } else if (valor == 19) {
-      return "You have a full house!";
+      return "Você tem um full house!";
   } else if (valor == 18) {
-      return "You have a flush!";
+      return "Você tem um flush!";
   } else if (valor == 17) {
-      return "You have a straight!";
+      return "Você tem um straight!";
   } else if (valor == 16) {
-      return "You have a triple!";
+      return "Você tem um triple!";
   } else if (valor == 15) {
-      return "You have two pairs!";
+      return "Você tem dois pares!!";
   } else if (valor == 14) {
-      return "You have a pair!";
+      return "Você tem um par!";
   } else{
-      return "Your highest card is " + valor;
+      return "Sua maior carta é a " + valor + "!";
   }
   }
 
- display(rank, suit) {
-   let rank2;
-   let suit2;
-   suit2:"";
-    if (rank == 1) {
-        rank2 = "Ace of ";
-    }
-    if (rank == 2) {
-      rank2 = "Two of ";
-    }
-    if (rank == 3) {
-      rank2 = "Three of ";
-    }
-    if (rank == 4) {
-      rank2 = "Four of ";
-    }
-    if (rank == 5) {
-      rank2 = "Five of ";
-    }
-    if (rank == 6) {
-      rank2 = "Six of ";
-    }
-    if (rank == 7) {
-      rank2 = "Seven of ";
-    }
-    if (rank == 8) {
-      rank2 = "Eight of ";
-    }
-    if (rank == 9) {
-      rank2 = "Nine of ";
-    }
-    if (rank == 10) {
-      rank2 = "Ten of ";
-    }
-    if (rank == 11) {
-      rank2 = "Jack of ";
-    }
-    if (rank == 12) {
-      rank2 = "Queen of ";
-    }
-    if (rank == 13) {
-      rank2 = "King of ";
-    }
-    if (suit == 1) {
-      suit2 = "Spades";
-    }
-    if (suit == 2) {
-      suit2 = "Hearts";
-    }
-    if (suit == 3) {
-      suit2 = "Diamonds";
-    }
-    if (suit == 4) {
-      suit2 = "Clubs";
-    }
-    return rank2 + suit2;
+  retornaImagem(rank,suit)
+  {
+    return "/assets/baralho/"+ rank +"-"+suit+".png"
   }
 }

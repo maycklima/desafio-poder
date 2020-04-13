@@ -1,0 +1,97 @@
+#div1
+{
+    background-color:lightgrey ;
+    background-image: url(src\assets\bg.jpg);
+}
+
+#container{
+    width: 1200px;
+    background-color: black;
+    margin-top: 50px;
+}
+
+#divEsquerdo{
+  align-content: center;
+    background-color: white ;
+    border-radius: 15px;
+    width: 450px;  
+    background-color:lightgrey ;
+    opacity: 0.95;
+    -moz-opacity:0.95;
+    -webkit-opacity:0.95;
+}
+
+#divForm
+{
+    align-content: center;
+    background-color: white ;
+    border-radius: 15px;
+    width: 450px;    
+    padding: 100px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    
+}
+
+#divFormPlayer
+{
+    align-content: center;
+    background-color: white ;
+    border-radius: 15px;
+    width: 600px;  
+    height: 550px; 
+    padding: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-left: 60px;
+    opacity: 0.92;
+    -moz-opacity:0.92;
+    -webkit-opacity:0.92;
+    
+}
+
+#divPlacar
+{
+    align-content: center;
+    background-color: white ;
+    border-radius: 15px;
+    width: 450px;  
+    height: 290px; 
+    padding: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-top: 1px;
+    
+}
+
+#container > div{
+    float: left;
+}
+
+#esquerdo > div{
+  float: left;
+}
+
+#divPlayers
+{
+    background-color:red ;
+}
+
+#center
+{ 
+  margin-top: 10px;
+    text-align: center;
+}
+#resultado
+{ 
+    text-align: center;
+    font-size: large;
+}
+
+#nome
+{ 
+    text-align: center;
+    font-size: large;
+}
+
+
