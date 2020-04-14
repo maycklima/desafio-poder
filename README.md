@@ -3,7 +3,7 @@
 *Funcionalidades
 - Entradas de dois jogadores
 - Cartas são distribuídas para estes jogadores
-- Baseado nas cartas distribuídas verifica-se qual é o vencedor da rodada
+- Baseado nas cartas distribuídas verifica-se qual é o jogador vencedor da rodada
 - É possível registrar ou descartar o resultado da partida
 - Pode-se dar as cartas novamente ou reinicar um novo jogo no qual será pedido outros dois jogadoes.
 
