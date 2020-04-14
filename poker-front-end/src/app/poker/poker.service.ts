@@ -9,7 +9,7 @@ export class PokerService {
 
   @Input() player1Name = '';
   @Input() player2Name = '';
-  playersUrl = '/api/poker/game';
+  playersUrl = 'http://localhost:8080/poker/game';
 
   constructor( private http: HttpClient) {   }
 

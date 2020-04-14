@@ -17,12 +17,16 @@ export class PokerComponent implements OnInit {
   resultado;
 
   imagePath = '/assets/poker-icon.png'
+  ingamePath = '/assets/in-game.png'
+
+
   mostrarResultado = true;
   mostrarBotaoResultado = true;  
   mostrarBotoesResultado = true;
   mostrarDivCartas = true;
   mostrarForm = false;
   placar = true;
+  emjogo = true;
 
    
 
@@ -70,6 +74,7 @@ export class PokerComponent implements OnInit {
       this.mostrarDivCartas = false;
       this.mostrarBotoesResultado = false;
       this.mostrarForm = true;
+      this.emjogo = false;
     }
   }
   novoJogo(){
@@ -82,6 +87,7 @@ export class PokerComponent implements OnInit {
     this.mostrarDivCartas = true;
     this.mostrarForm = false;
     this.placar = true;
+    this.emjogo = true;
   }
 
   mostrar(){

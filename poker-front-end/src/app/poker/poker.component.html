@@ -25,6 +25,9 @@
       <input type="text" placeholder="Nome" class="form-control" id="exampleInputPassword1" #nome2Input>
     </div>
   </div>
+  <div id="center" [hidden]=emjogo>
+    <a><img [src]="ingamePath" alt="" width="200" height="200"></a>
+  </div>
   <div id="center" >
     <button id="button" (click)="darCartas(nome1Input.value,nome2Input.value)" class="btn btn-primary">Dar as cartas</button> 
     <button id="button" (click)="novoJogo()" class="btn btn-primary">Reiniciar</button> 
