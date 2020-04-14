@@ -7,8 +7,8 @@
 - TypeScript
 - Bootstrap 4
 - IDE: Visual Studio Code
-<hr>
+
 *Back-end
 - Java
-- Spring
+- Spring Boot
 - IDE: Eclipse - Spring Toos Suite 4
