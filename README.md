@@ -23,7 +23,7 @@
 
 
 *Função de cada lado
-  -O front-end consome a API fornecida pelo back-end com informações necessárias para o jogo.
-  -O back-end executa as regras do jogo e fornece para o front-end como uma API REST.
+ - O front-end consome a API fornecida pelo back-end com informações necessárias para o jogo.
+ - O back-end executa as regras do jogo e fornece para o front-end como uma API REST.
 
 
